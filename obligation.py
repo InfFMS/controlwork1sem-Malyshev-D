@@ -42,3 +42,24 @@
 #
 # -----------------------------------------------------------------------------
 # Напишите программу ниже:
+PrPok = int(input())
+PrPog = int(input())
+SumKup = int(input())
+Period = int(input())
+Kommis = int(input())
+PerDPog = int(input())
+# 1. Комиссия на покупку:
+KomPok = PrPok * (Kommis / 100)
+# 2. Полная цена покупки:
+Price = PrPok + KomPok
+# 3. Общий купонный доход:
+KupDohod = SumKup * (PerDPog/Period)
+# 4. Общий доход до налогообложения:
+Dohod = PrPog + KupDohod - Price
+# 5. Налог на доход:
+if Dohod > 0:
+    Nalog = Dohod * 0.13
+else: Nalog = 0
+# 6. Чистая доходность (в процентах):
+ClearDohod = (Dohod - Nalog) / Price * 100
+print(ClearDohod)
